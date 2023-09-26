@@ -1,0 +1,25 @@
+---
+# Source: ako/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: avi-k8s-config
+  namespace: avi-system
+data:
+  controllerIP: "10.0.0.1"
+  controllerVersion: "18.2.8"
+  cniPlugin: ""
+  shardVSSize: "LARGE"
+  fullSyncFrequency: "300"
+  cloudName: "Default-Cloud"
+  clusterName: ""
+  defaultDomain: ""
+  disableStaticRouteSync: "false"
+  ingressApi: "corev1"
+  defaultIngController: "true"
+  subnetIP: ""
+  subnetPrefix: ""
+  networkName: ""
+  l7ShardingScheme: "hostname"
+  logLevel: "INFO"
+  deleteConfig: "false"

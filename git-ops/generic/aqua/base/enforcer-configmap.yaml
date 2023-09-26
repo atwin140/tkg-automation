@@ -1,0 +1,20 @@
+---
+# Source: enforcer/templates/enforcer-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mc-aqua-enforcer-config
+  namespace: aqua
+  labels:
+    app: aqua-ds
+    aqua.component: enforcer
+    helm.sh/chart: 'enforcer-2022.4.28'
+    app.kubernetes.io/name: "enforcer"
+    app.kubernetes.io/instance: mc
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: "2022.4"
+data:
+  AQUA_SERVER: 192.168.1.1
+  AQUA_INSTALL_PATH: "/var/lib/aquasec"
+  AQUA_HEALTH_MONITOR_ENABLED: "true"
+  AQUA_EXPRESS_MODE: "false"
