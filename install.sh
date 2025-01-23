@@ -9,7 +9,7 @@ BIN_PATH="/usr/local/bin"
 PATH=$PATH:$BIN_PATH
 
 # Application versions definition for future updating
-KUBECTL_VERSION='v1.24.14'
+KUBECTL_VERSION='v1.32.0'
 YQ_VERSION='v4.34.2'
 # TANZU_VERSION='v0.12.1'
 PINNIPED_VERSION='v0.24.0'
@@ -21,19 +21,21 @@ VENDIR_VERSION="v0.32.2"
 KAPP_CONTROLLER_VERSION="v0.44.1"
 VAULT_VERSION="v1.13.0"
 
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
 install_kubectl
-install_tmc
+# install_tmc
 install_kubeseal
 install_helm_cli
 install_terraform
-install_carvel_tools
-install_kubectl_vsphere
+# install_carvel_tools
+# install_kubectl_vsphere
 install_yq
 install_kubens
 # install_minio
-install_pinniped
+# install_pinniped
 # install_kpack_cli
-install_tanzu
+# install_tanzu
 #install_vault
 
 rm -rf /tmp/*

@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 RUN  apt-get update \
     && apt-get install unzip wget curl sudo bash vim jq git dnsutils -y
@@ -18,11 +18,8 @@ USER root
 
 COPY install.sc /tmp/install.sc
 COPY install.sh /tmp/install.sh
-COPY tmc.zip /tmp/tmc.zip
 COPY kubeseal.tar.gz /tmp/kubeseal.tar.gz
 COPY kube-ps1.sh /tmp/kube-ps1.sh
-COPY vsphere-plugin.zip /tmp/
-COPY tanzu-core-linux_amd64 /tmp/
 RUN  chmod +x /tmp/install.sh
 RUN  /tmp/install.sh
 

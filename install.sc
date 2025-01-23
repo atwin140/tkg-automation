@@ -69,7 +69,7 @@ function install_kubectl() {
         echo "Kubectl is already installed!"
     else
         echo "Installing kubectl with version ${KUBECTL_VERSION}"
-            curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
+            curl -LO "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
             sleep 3
             chmod +x ./kubectl
             mv ./kubectl $BIN_PATH
