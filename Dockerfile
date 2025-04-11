@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:24.10
 
 RUN  apt-get update \
     && apt-get install unzip wget curl sudo bash vim jq git dnsutils -y
@@ -16,12 +16,12 @@ RUN useradd -ms /bin/bash ${USERNAME}; echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL"
 
 USER root
 
-COPY install.sc /tmp/install.sc
-COPY install.sh /tmp/install.sh
-COPY kubeseal.tar.gz /tmp/kubeseal.tar.gz
+COPY install2.sc /tmp/install.sc
+COPY install2.sh /tmp/install.sh
+COPY kubeseal-0.29.0-linux-amd64.tar.gz /tmp/kubeseal.tar.gz
 COPY kube-ps1.sh /tmp/kube-ps1.sh
-RUN  chmod +x /tmp/install.sh
-RUN  /tmp/install.sh
+RUN  chmod +x /tmp/install.sh && mkdir /GIT
+# RUN  /tmp/install.sh
 
 
 RUN apt-get clean \

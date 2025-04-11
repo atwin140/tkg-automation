@@ -2,7 +2,7 @@
 # Install common utils
 
 function install_kubeseal() {
-    KUBESEAL_PATH=/usr/bin/kubeseal
+    KUBESEAL_PATH=/usr/local/bin/kubeseal
     if [[ -f $KUBESEAL_PATH ]]; then
         echo "Kubeseal are installed"
     else
